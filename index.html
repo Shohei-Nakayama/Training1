@@ -6,25 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+   
 </head>
 <body>
     <div class="container">
-        <div>こんにちはうちゅう</div>
-         <div class="title">
-            <h1>こんにちはふちゅう</h1>
-            <div class="marker"></div>
-        </div>
+        <div>今の時刻は</div>
+        <p id="currentTime"></p>
     
-         <div id ="app">今日は2024年05月09日です</div>
-
+        
 
     </div>
 
     <script>
-        new Vue({
-            el:"#app"
-        })
+        
+        function showCurrentTime(){
+        const now = new Date();       
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+    
+
+        const time = `現在の時刻は${hour}時${minute}分${second}秒です。`;
+        document.getElementById('currentTime').textContent = time;
+        
+            }
+        
 
     </script>
 
